@@ -2,7 +2,7 @@
   <!-- <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <h1>{{ title }}</h1>
-  <Modal/>
+  <Modal :header="header" :text="text" theme="sale"/>
   <input type="text" ref="name">
   <button @click="handleClick">Click me</button>
 </template>
@@ -16,7 +16,10 @@ export default {
   components: { Modal },
   data() {
     return {
-      title: 'This is my Vue app :)'
+      title: 'This is my Vue app :)',
+      header: 'Sign up for the Giveaway!',
+      text: "Grab your ninja swag for half price!"
+
     } 
   },
   methods: {
