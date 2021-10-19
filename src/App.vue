@@ -13,7 +13,16 @@
         <p>Grab your ninja swag for half price!</p>
       </Modal>
   </div>
-  <button @click.alt="toggleModal">Open Modal (alt)</button>    
+
+  <div v-if="showModalTwo">
+      <Modal @close="toggleModalTwo">
+        <h1>Sign up to the news letter</h1>
+        <p>For updates and promo codes!</p>
+      </Modal>
+  </div>
+
+  <button @click.alt="toggleModal">Open Modal (alt)</button>
+  <button @click="toggleModalTwo">Open Modal</button>
   <input type="text" ref="name">
   <button @click="handleClick">Click me</button>
 </template>
@@ -28,9 +37,11 @@ export default {
   data() {
     return {
       title: 'This is my Vue app :)',
-      header: 'Sign up for the Giveaway!',
-      text: "Grab your ninja swag for half price!",
-      showModal: false
+      // header: 'Sign up for the Giveaway!',
+      // text: "Grab your ninja swag for half price!",
+      showModal: false,
+      showModalTwo: false,
+      
 
     } 
   },
@@ -42,6 +53,9 @@ export default {
     },
     toggleModal() {
       this.showModal = !this.showModal
+    },
+    toggleModalTwo() {
+      this.showModalTwo = !this.showModalTwo
     }
   }
   // components: {
